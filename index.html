@@ -418,7 +418,7 @@ const T = {
   }
 };
 
-let lang = 'es';
+let lang = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'es';
 
 function setLang(l) {
   lang = l;
