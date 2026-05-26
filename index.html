@@ -419,7 +419,7 @@ const T = {
   }
 };
 
-let lang = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'es';
+let lang = 'es';
 
 function setLang(l) {
   lang = l;
@@ -483,7 +483,7 @@ pages.home.classList.add('active');
 setTimeout(()=>pages.home.classList.add('visible'),50);
 navBack.addEventListener('click',()=>showPage('home'));
 document.getElementById('btnES').addEventListener('click',()=>setLang('es'));
-document.getElementById('btnEN').addEventListener('click',()=>setLang('en'));
+document.getElementById('btnEN').addEventListener('click',()=>window.location.href='/en/');
 document.querySelectorAll('[data-goto]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();showPage(el.dataset.goto)}));
 navLinks.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showPage(a.dataset.page)}));
 document.querySelector('.nav-logo').addEventListener('click',e=>{e.preventDefault();showPage('home')});
