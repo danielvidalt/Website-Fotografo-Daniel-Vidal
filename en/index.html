@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<base href="/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Professional photographer in Sydney specialising in weddings, events and personal branding. Capturing unique moments with a natural, authentic style. Book your session.">
 <link rel="canonical" href="https://danielvidalt.com/en/">
@@ -364,7 +365,7 @@ const T = {
     'brd.portfolio.title':'Portfolio<br><em>de branding</em>',
     'brd.cta.title':'¿Tu marca<br>merece mejores<br><em>imágenes?</em>',
     'brd.cta.sub':'Trabajamos juntos para crear el contenido visual que tu marca necesita. Sydney.',
-    'spt.eyebrow':'Fotografía Deportiva &middot; Sydney','spt.title':'Cada partido<br>cuenta una <em>historia</em>',
+    'spt.eyebrow':'Fotografía Deportiva · Sydney','spt.title':'Cada partido<br>cuenta una <em>historia</em>',
     'spt.desc':'Clubes, ligas, torneos y campeonatos. Fútbol femenino, infantil y de todas las edades y categorías — y también otros deportes. Con base en Sydney, capturo la intensidad, el esfuerzo y la emoción de cada jugada, dentro y fuera de la cancha.',
     'spt.portfolio.title':'Deporte<br><em>en acción</em>',
     'spt.cta.title':'¿Necesitas un<br>fotógrafo <em>deportivo</em>?','spt.cta.sub':'Clubes, ligas, torneos y campeonatos — fútbol femenino, infantil, de todas las edades y categorías, y otros deportes. Hablemos y capturemos la acción en Sydney.'
@@ -422,7 +423,7 @@ const T = {
     'brd.portfolio.title':'Branding<br><em>portfolio</em>',
     'brd.cta.title':'Does your brand<br>deserve better<br><em>images?</em>',
     'brd.cta.sub':'Let\'s work together to create the visual content your brand needs to grow. Sydney.',
-    'spt.eyebrow':'Sports Photography &middot; Sydney','spt.title':'Every match<br>tells a <em>story</em>',
+    'spt.eyebrow':'Sports Photography · Sydney','spt.title':'Every match<br>tells a <em>story</em>',
     'spt.desc':'Clubs, leagues, tournaments and championships. Women\'s football, kids and all ages and categories — plus other sports too. Based in Sydney, I capture the intensity, effort and emotion of every play, on and off the pitch.',
     'spt.portfolio.title':'Sport<br><em>in action</em>',
     'spt.cta.title':'Need a<br><em>sports</em> photographer?','spt.cta.sub':'Clubs, leagues, tournaments and championships — women\'s football, kids, all ages and categories, and other sports. Let\'s talk and capture the action in Sydney.'
@@ -503,3 +504,4 @@ window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60)
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';obs.unobserve(e.target)}}),{threshold:.08});
 function setupAnims(page){page.querySelectorAll('.home-service-card,.step,.portfolio-item,.brand-item,.event-cat').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .6s ease,transform .6s ease';obs.observe(el)})}
 setupAnims(pages.home);
+</script></main></body></html>
