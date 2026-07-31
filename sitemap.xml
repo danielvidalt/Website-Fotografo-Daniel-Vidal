@@ -3,10 +3,18 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://danielvidalt.com/</loc>
-    <lastmod>2026-05-22</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://danielvidalt.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://danielvidalt.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://danielvidalt.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://danielvidalt.com/es/"/>
+  </url>
+  <url>
+    <loc>https://danielvidalt.com/es/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://danielvidalt.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://danielvidalt.com/es/"/>
   </url>
 </urlset>
