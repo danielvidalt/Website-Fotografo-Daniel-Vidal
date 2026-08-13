@@ -250,6 +250,7 @@ nav.scrolled{background:rgba(8,8,8,.95);backdrop-filter:blur(20px);padding:18px 
 .sport-item-meta{display:block;font-size:11.5px;letter-spacing:.02em;color:var(--text-soft);line-height:1.6;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s}
 .sport-item-link{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:6px;opacity:0;transform:translateY(8px);transition:opacity .4s .05s,transform .4s .05s}
 .sport-grid .brand-item:hover .sport-item-round,.sport-grid .brand-item:hover .sport-item-teams,.sport-grid .brand-item:hover .sport-item-meta,.sport-grid .brand-item:hover .sport-item-link{opacity:1;transform:translateY(0)}
+@media (hover:none),(pointer:coarse){.sport-grid .brand-item::after{opacity:1}.sport-grid .sport-item-round,.sport-grid .sport-item-teams,.sport-grid .sport-item-meta,.sport-grid .sport-item-link{opacity:1;transform:translateY(0)}}
 .brand-ph-line{width:40px;height:1px;background:var(--border-gold)}
 .brand-ph-text{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.1)}
 .brand-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8) 0%,transparent 60%);opacity:0;transition:opacity .4s}
