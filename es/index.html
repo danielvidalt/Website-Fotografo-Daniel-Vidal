@@ -547,7 +547,9 @@ document.addEventListener('click',e=>{if(!navDropdownMenu.contains(e.target)&&e.
 navLinks.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showPage(a.dataset.page);closeNavDropdown()}));
 document.querySelector('.nav-logo').addEventListener('click',e=>{e.preventDefault();showPage('deportiva')});
 const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+let navTicking=false;
+function updateNavScrolled(){nav.classList.toggle('scrolled',scrollY>(nav.classList.contains('scrolled')?40:60));navTicking=false}
+window.addEventListener('scroll',()=>{if(!navTicking){requestAnimationFrame(updateNavScrolled);navTicking=true}},{passive:true});
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';obs.unobserve(e.target)}}),{threshold:.08});
 function setupAnims(page){page.querySelectorAll('.home-service-card,.step,.portfolio-item,.brand-item,.event-cat').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .6s ease,transform .6s ease';obs.observe(el)})}
 setupAnims(pages.deportiva);
