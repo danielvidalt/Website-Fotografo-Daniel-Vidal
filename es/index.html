@@ -85,6 +85,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(200,169,110,.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .12s ease}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:28px 60px;display:flex;align-items:center;justify-content:space-between;transition:background .4s,padding .4s}
 nav.scrolled{background:rgba(8,8,8,.95);backdrop-filter:blur(20px);padding:18px 60px;border-bottom:1px solid var(--border)}
+@media(hover:none),(pointer:coarse){nav.scrolled{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(8,8,8,.98)}}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:.1em;color:var(--text);text-decoration:none;cursor:none}
 .nav-logo span{color:var(--gold)}
 .nav-links{display:flex;gap:36px;list-style:none}
@@ -497,6 +498,7 @@ function applyTranslations() {
 }
 
 // ── CURSOR ──
+if(matchMedia('(hover:hover) and (pointer:fine)').matches){
 const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px'});
@@ -505,6 +507,7 @@ document.querySelectorAll('a,button,.home-service-card').forEach(el=>{
   el.addEventListener('mouseenter',()=>{cursor.style.width='14px';cursor.style.height='14px';ring.style.width='52px';ring.style.height='52px';ring.style.borderColor='rgba(200,169,110,.8)'});
   el.addEventListener('mouseleave',()=>{cursor.style.width='8px';cursor.style.height='8px';ring.style.width='36px';ring.style.height='36px';ring.style.borderColor='rgba(200,169,110,.5)'});
 });
+}
 
 // ── ROUTER ──
 const pages={home:document.getElementById('page-home'),bodas:document.getElementById('page-bodas'),eventos:document.getElementById('page-eventos'),branding:document.getElementById('page-branding'),deportiva:document.getElementById('page-deportiva'),'sobre-mi':document.getElementById('page-sobre-mi')};
