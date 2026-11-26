@@ -297,7 +297,7 @@ footer{padding:48px 60px;border-top:1px solid var(--border);display:flex;align-i
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 <nav id="nav" role="navigation" aria-label="Main menu">
-  <a href="#" class="nav-logo" data-goto="deportiva"><span></span></a>
+  <a href="#" class="nav-logo" data-goto="home"><span></span></a>
   <ul class="nav-links">
     <li class="nav-dropdown">
       <button type="button" class="nav-dropdown-toggle" id="navDropdownToggle" aria-haspopup="true" aria-expanded="false" data-i18n="nav.more">Secciones</button>
@@ -531,7 +531,7 @@ document.querySelectorAll('a,button,select,.home-service-card').forEach(el=>{
 const pages={home:document.getElementById('page-home'),bodas:document.getElementById('page-bodas'),eventos:document.getElementById('page-eventos'),branding:document.getElementById('page-branding'),deportiva:document.getElementById('page-deportiva'),'sobre-mi':document.getElementById('page-sobre-mi')};
 const navBack=document.getElementById('navBack');
 const navLinks=document.querySelectorAll('.nav-links a[data-page]');
-let current='deportiva';
+let current='home';
 function showPage(id){
   if(!pages[id]||id===current)return;
   const prev=pages[current],next=pages[id];
@@ -543,13 +543,13 @@ function showPage(id){
     requestAnimationFrame(()=>requestAnimationFrame(()=>{next.classList.add('visible');setupAnims(next)}));
   },280);
   current=id;
-  navBack.classList.toggle('visible',id!=='deportiva');
+  navBack.classList.toggle('visible',id!=='home');
   navLinks.forEach(a=>a.classList.toggle('active',a.dataset.page===id));
   document.getElementById('nav').classList.remove('scrolled');
 }
-pages.deportiva.classList.add('active');
-setTimeout(()=>pages.deportiva.classList.add('visible'),50);
-navBack.addEventListener('click',()=>showPage('deportiva'));
+pages.home.classList.add('active');
+setTimeout(()=>pages.home.classList.add('visible'),50);
+navBack.addEventListener('click',()=>showPage('home'));
 document.getElementById('btnES').addEventListener('click',()=>window.location.href='/es/');
 document.getElementById('btnEN').addEventListener('click',()=>setLang('en'));
 document.querySelectorAll('[data-goto]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();showPage(el.dataset.goto)}));
@@ -563,14 +563,14 @@ navDropdownToggle.addEventListener('click',e=>{
 });
 document.addEventListener('click',e=>{if(!navDropdownMenu.contains(e.target)&&e.target!==navDropdownToggle)closeNavDropdown()});
 navLinks.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showPage(a.dataset.page);closeNavDropdown()}));
-document.querySelector('.nav-logo').addEventListener('click',e=>{e.preventDefault();showPage('deportiva')});
+document.querySelector('.nav-logo').addEventListener('click',e=>{e.preventDefault();showPage('home')});
 const nav=document.getElementById('nav');
 let navTicking=false;
 function updateNavScrolled(){nav.classList.toggle('scrolled',scrollY>(nav.classList.contains('scrolled')?40:60));navTicking=false}
 window.addEventListener('scroll',()=>{if(!navTicking){requestAnimationFrame(updateNavScrolled);navTicking=true}},{passive:true});
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';obs.unobserve(e.target)}}),{threshold:.08});
 function setupAnims(page){page.querySelectorAll('.home-service-card,.step,.portfolio-item,.brand-item,.event-cat').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .6s ease,transform .6s ease';obs.observe(el)})}
-setupAnims(pages.deportiva);
+setupAnims(pages.home);
 
 // ── SPORT FILTERS ──
 (function(){
